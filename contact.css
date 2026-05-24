@@ -4,55 +4,67 @@ body {
     box-sizing: border-box;
 }
 
-header{
- background-color: #F4C2C2; 
- height: 100px; 
- width: 100%; 
- display: flex;
+header {
+    background-color: #F4C2C2;
+    height: 100px;
+    width: 100%;
+    display: flex;
 }
 
 .navbar {
     display: flex;
-    gap: 50px;
-    z-index: 100;
-    opacity: none;
-    z-index: 1;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
 }
 
-.navbar ul{
-   display: flex; 
-    text-decoration:none ;
-    gap: 100px;
-    margin-left: 200px;
-    list-style: none;
-    margin-top: 50px;
-    opacity: none;
+.navbar img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    border: 0.6px solid black;
+    flex-shrink: 0;
 }
-.navbar ul li a{
+
+.navbar ul {
+    display: flex;
+    gap: 30px;
+    margin-left: 30px;
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.navbar ul li a {
     text-decoration: none;
     color: black;
     font-size: medium;
     font-weight: bold;
-   font-family: serif;
-   opacity: none;
-    
+    font-family: serif;
 }
+
 .navbar ul li a:hover {
-   cursor: pointer;
-   color: #ea8282;
-   transition: 0.1s;
-   box-shadow:5px 5px;
-   opacity: none ;
-
+    cursor: pointer;
+    color: #ea8282;
+    transition: 0.1s;
 }
 
-.navbar img {
-   height: 100px; 
-   width: 100px;
-   border-radius: 50px;
-   border: 0.6px solid black;
-   opacity: none;
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    margin-left: auto;
+    margin-right: 20px;
+}
 
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
 }
 
 section {
@@ -91,28 +103,25 @@ section::before {
     z-index: 0;
 }
 
-
-.contact-wrapper{
-  position: relative;  
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  align-items: flex-start;
-  justify-content: center;
-  width: 90%;
-  
-  margin: 0 auto;
+.contact-wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
-
-
-
 
 .contact-calendar {
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     padding: 25px;
     flex: 1;
+    min-width: 280px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -235,38 +244,36 @@ section::before {
 
 .footer {
     background-color: #F4C2C2;
-    height: 100px;
+    height: auto;
+    min-height: 100px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
     box-sizing: border-box;
-    position: relative;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.facebook, .whatsapp{
+.facebook, .whatsapp {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.facebook img, .whatsapp img{
+.facebook img, .whatsapp img {
     height: 60px;
-    width:  60px;
+    width: 60px;
     border-radius: 50%;
-
 }
 
-
-.whatsapp p, .facebook p{
+.whatsapp p, .facebook p {
     font-size: 18px;
     font-family: serif;
     font-weight: bold;
     margin: 0;
 }
-
-
 
 .copyright {
     font-size: 18px;
@@ -276,18 +283,70 @@ section::before {
     text-align: center;
 }
 
-
+/* ===== MOBILE STYLES ===== */
 @media (max-width: 768px) {
-    img {
-        width: 100%;
+
+    header {
         height: auto;
+        min-height: 70px;
     }
 
-    body {
-        font-size: 16px;
+    .navbar {
+        flex-wrap: wrap;
         padding: 10px;
     }
+
+    .navbar img {
+        height: 60px;
+        width: 60px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin: 10px 0;
+        background-color: #F4C2C2;
+    }
+
+    .navbar ul.open {
+        display: flex;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .contact-calendar {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .calendar-day {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .facebook img, .whatsapp img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .whatsapp p, .facebook p, .copyright {
+        font-size: 14px;
+    }
 }
-    
-
-

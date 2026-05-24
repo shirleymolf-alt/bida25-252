@@ -4,102 +4,110 @@ body {
     box-sizing: border-box;
 }
 
-header{
- background-color: #F4C2C2; 
- height: 100px; 
- width: 100%; 
- display: flex;
+header {
+    background-color: #F4C2C2;
+    height: 100px;
+    width: 100%;
+    display: flex;
 }
 
 .navbar {
     display: flex;
-    gap: 50px;
-    z-index: 100;
-    opacity: none;
-    z-index: 1;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
 }
 
-.navbar ul{
-   display: flex; 
-    text-decoration:none ;
-    gap: 100px;
-    margin-left: 200px;
-    list-style: none;
-    margin-top: 50px;
-    opacity: none;
+.navbar img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    border: 0.6px solid black;
+    flex-shrink: 0;
 }
-.navbar ul li a{
+
+.navbar ul {
+    display: flex;
+    gap: 30px;
+    margin-left: 30px;
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.navbar ul li a {
     text-decoration: none;
     color: black;
     font-size: medium;
     font-weight: bold;
-   font-family: serif;
-   opacity: none;
-    
+    font-family: serif;
 }
+
 .navbar ul li a:hover {
-   cursor: pointer;
-   color: #ea8282;
-   transition: 0.1s;
-   box-shadow:5px 5px;
-   opacity: none ;
-
+    cursor: pointer;
+    color: #ea8282;
+    transition: 0.1s;
 }
 
-.navbar img {
-   height: 100px; 
-   width: 100px;
-   border-radius: 50px;
-   border: 0.6px solid black;
-   opacity: none;
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    margin-left: auto;
+    margin-right: 20px;
 }
 
-section{
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+}
+
+section {
     padding-top: 0px;
     box-sizing: border-box;
-
 }
 
-.about-hero{
+.about-hero {
     display: flex;
     flex-direction: row;
-    height: 80vh;
+    min-height: 80vh;
     background-image: url(background.avif);
     background-size: cover;
-    
-    
+    flex-wrap: wrap;
 }
 
-.about-hero img{
-    width: 50% ; 
-    height: 80%;
-    margin-top: 50px;
-    margin-left: 100px;
-    margin-bottom: 5px;
+.about-hero img {
+    width: 45%;
+    height: auto;
+    margin: 30px 0 30px 50px;
     border-radius: 10px;
     border: 3px solid #C9A227;
-    align-items: center;
-    
+    object-fit: cover;
 }
 
 .about-content {
-    width: 50%;
-    padding: 40px ;
+    flex: 1;
+    min-width: 250px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgba(255, 255,255, 0.6);
-    margin-left: 150px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-left: 30px;
 }
 
 .about-content h2 {
     font-family: serif;
-    font-size: 50px;
+    font-size: clamp(28px, 5vw, 50px);
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
-    margin-top: 0%;
-    padding-top: 0%;
+    margin-top: 0;
 }
 
 .about-content p {
@@ -111,7 +119,8 @@ section{
 
 .footer {
     background-color: #F4C2C2;
-    height: 100px;
+    height: auto;
+    min-height: 100px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -119,31 +128,28 @@ section{
     padding: 10px 20px;
     overflow: hidden;
     box-sizing: border-box;
-    position: relative;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.facebook, .whatsapp{
+.facebook, .whatsapp {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.facebook img, .whatsapp img{
+.facebook img, .whatsapp img {
     height: 60px;
-    width:  60px;
+    width: 60px;
     border-radius: 50%;
-
 }
 
-
-.whatsapp p, .facebook p{
+.whatsapp p, .facebook p {
     font-size: 18px;
     font-family: serif;
     font-weight: bold;
     margin: 0;
 }
-
-
 
 .copyright {
     font-size: 18px;
@@ -153,15 +159,70 @@ section{
     text-align: center;
 }
 
+/* ===== MOBILE STYLES ===== */
 @media (max-width: 768px) {
-    img {
-        width: 100%;
+
+    header {
         height: auto;
+        min-height: 70px;
     }
 
-    body {
-        font-size: 16px;
+    .navbar {
+        flex-wrap: wrap;
         padding: 10px;
     }
-}
 
+    .navbar img {
+        height: 60px;
+        width: 60px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin: 10px 0;
+        background-color: #F4C2C2;
+    }
+
+    .navbar ul.open {
+        display: flex;
+    }
+
+    .about-hero {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .about-hero img {
+        width: calc(100% - 40px);
+        margin: 20px auto;
+    }
+
+    .about-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .facebook img, .whatsapp img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .whatsapp p, .facebook p, .copyright {
+        font-size: 14px;
+    }
+}
