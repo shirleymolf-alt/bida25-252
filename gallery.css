@@ -172,7 +172,7 @@ section::before {
     text-align: center;
 }
 
-/* ===== MOBILE STYLES ===== */
+
 @media (max-width: 768px) {
 
     header {
