@@ -262,6 +262,17 @@ z-index: 1;
 
 
 
+@media (max-width: 768px) {
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
 
 
 
