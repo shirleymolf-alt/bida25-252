@@ -1,0 +1,273 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: #FFF0F5;
+}
+
+header{
+ background-color: #F4C2C2; 
+ height: 100px; 
+ width: 100%; 
+ display: flex;
+}
+
+.navbar {
+    display: flex;
+    gap: 50px;
+    z-index: 100;
+    margin-bottom: 0;
+}
+
+.navbar ul{
+   display: flex; 
+    text-decoration:none ;
+    gap: 100px;
+    margin-left: 200px;
+    list-style: none;
+    margin-top: 50px;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: medium;
+    font-weight: bold;
+   font-family: serif;
+    
+}
+.navbar ul li a:hover {
+   cursor: pointer;
+   color: #ea8282;
+   transition: 0.1s;
+   box-shadow:5px 5px;
+
+}
+
+.navbar img {
+   height: 100px; 
+   width: 100px;
+   border-radius: 50px;
+   border: 0.6px solid black;
+}
+
+section{
+
+   
+   background-size: cover;
+   background-position: center;
+   margin: 0px;
+   padding: 0px;
+   
+   
+   
+   
+}
+   
+.heading {
+    width: 100% ;
+    height: 500px;
+    background-size: cover;
+    background: color #FFF0F5; 
+    position: relative;
+    padding-top: 80px;
+    box-sizing: border-box;
+    
+    
+    
+}
+
+.heading::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(background.avif);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    z-index: 0
+}
+
+.heading-content {
+
+height: 200px;
+width: 200px;
+opacity: none;
+position: relative;
+z-index: 1;
+}
+
+
+
+.heading h1 {
+  color: black;
+  font-size:80px ;
+  font-family: PLAYFAIR DISPLAY SC;
+  font-weight: bolder;
+  margin-top: 0;
+  text-indent: 10%;
+  white-space: nowrap;
+  padding-top: 50px;
+  display: flex;
+  text-align: center;
+  padding-left: 150%;
+  margin: 0%;
+  opacity: none;
+}
+
+.heading p{
+    color: black;
+    margin-left: 100px;
+    white-space: nowrap;
+    text-indent: 10%;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: PLAYFAIR DISPLAY sans-serif;
+    padding-left: 200%;
+    line-height: 0;
+    text-align: center;
+    display: flex;
+    margin-top: 10%;
+    opacity: none;
+    
+}
+ .buttons{
+    flex-direction:row;
+    display: flex;
+    gap: 10px;
+    padding-bottom: 15px;
+    margin-top: 150px;
+    margin-left: 600px;
+    opacity: none;
+    position: relative;
+    z-index: 1 ;
+
+ }
+
+
+.button1 a{
+    text-decoration: none;
+    color: white;
+    background-color: #EA8F8F;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 3px solid #C9A227;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 16px;
+    opacity: none;
+    
+   
+}
+
+.button2 a{
+    text-decoration: none;
+    color: white;
+    background-color: #EA8F8F;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 3px solid #C9A227;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 16px;
+    opacity: none;
+    
+}
+
+.button1 a:hover{
+    opacity: 0.6;
+}
+
+.button2 a:hover{
+    opacity: 0.6;
+}
+
+.slideshow{
+    background-color: #FFF0F5;
+    background-size: cover;
+    background-position: center;
+    margin: 20px auto;
+    width: 100%;
+    height: 600px;
+    padding-bottom: 0%;
+    
+}
+
+    
+
+
+.carousel-item img{
+    height: 500px;
+    width: 100% ;
+    object-fit: contain;
+    
+    display: block;
+}
+
+#carouselExampleAutoplaying{
+    display: block;
+    width: 100%;
+    margin: 0 auto ;
+    padding: 0%;
+    padding-top: 10px;
+}
+
+.carousel-inner{
+    height: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer {
+    background-color: #F4C2C2;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.facebook, .whatsapp{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.facebook img, .whatsapp img{
+    height: 60px;
+    width:  60px;
+    border-radius: 50%;
+
+}
+
+
+.whatsapp p, .facebook p{
+    font-size: 18px;
+    font-family: serif;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+
+.copyright {
+    font-size: 18px;
+    font-family: serif;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+ 
+
+
+        

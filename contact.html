@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shirley's Nail Plug</title>
+    <link rel="stylesheet" href="contact.css">
+
+   <style>
+    form {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        label {
+            display: block;
+            margin-top: 15px;  
+            font-weight: bold;
+            font-family: serif;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #F4C2C2;
+            opacity: 39%;
+            border: 2px solid #C9A227;
+            border-radius: 15px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;    
+        }
+
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;    
+        }
+
+        .submit-btn {
+            background-color: #EA8F8F;
+            color: white;
+            border: 3px solid #C9A227;
+            border-radius: 15px;
+            font-weight: bold;
+            font-family: serif;
+        }
+
+        .clear-btn {
+            background-color: #EA8F8F;
+            color: white;
+            border: 3px solid #C9A227;
+            border-radius: 15px;
+            margin-right: 10px;
+            font-weight: bold;
+            font-family: serif;
+        }
+
+        button:hover {
+            opacity: 0.9;   
+        }
+
+        .contact-form-box {
+            background-color: white;
+            border-radius: 20px;
+            border: 2px solid #c9a84c;
+            padding: 25px 30px;
+            flex: 1;
+        }
+
+        .contact-form-box h3 {
+            font-family: serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            margin-top: 0;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .contact-form-box form {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            background: none;
+        }
+   </style> 
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="services.html">SERVICES</a></li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+      <li><a href="feedback.html">FEEDBACK</a></li>
+    </ul>
+    <img src="shirley_nail_logo.png" alt="Logo"/>
+  </div>
+</header>
+
+<section>
+  <p>Select your preferred appointment date and complete the form below.</p>
+
+  <div class="contact-wrapper">
+
+    <!-- Contact Form -->
+    <div class="contact-form-box">
+      <h3>CONTACT FORM</h3>
+      <form action="acknowledgement.html" method="get">
+
+          <label for="name">FULL NAME</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="phone">PHONE NUMBER</label>
+          <input type="number" id="phone" name="phone" required>
+          
+          <label for="email">EMAIL ADDRESS</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="service">PREFERRED SERVICE</label>
+          <input type="text" id="service" name="service" required>
+          
+          <label for="message">SPECIAL NOTES</label>
+          <textarea id="message" name="message"></textarea>
+
+          <div class="buttons">
+              <button type="reset" class="clear-btn">RESET</button>
+              <button type="submit" class="submit-btn">BOOK</button>   
+          </div>
+      </form>
+    </div>
+
+    <!-- Calendar -->
+    <div class="contact-calendar">
+        <h3>APPOINTMENT DATE SELECTION</h3>
+        <div class="calendar-inner">
+            <div class="calendar-header">
+                <button class="calendar-nav" id="prevMonth">&#9664;</button>
+                <h4 id="calendarTitle"></h4>
+                <button class="calendar-nav" id="nextMonth">&#9654;</button>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+        <div class="selected-date-display" id="selectedDateDisplay">
+            No date selected
+        </div>
+        <input type="hidden" id="appointment" name="appointment">
+    </div>
+
+  </div>
+</section>
+
+<!--Footer section-->
+<footer>
+  <div class="footer">
+    <div class="facebook">
+      <img src="facebook.png" alt="Facebook Logo"/>
+      <p>Shirley's Nail Plug</p>
+    </div>
+    <div class="whatsapp">
+      <img src="whatsapp.png" alt="WhatsApp Logo"/>
+      <p>+267 78 113 715</p>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2026 SHIRLEY'S NAIL PLUG.ALL RIGHTS RESERVED.</p>
+    </div>
+  </div> 
+</footer>
+ 
+<script>
+    const months = ["January","February","March","April","May","June",
+                    "July","August","September","October","November","December"];
+    const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    
+    let today = new Date();
+    let current = new Date(today.getFullYear(), today.getMonth(), 1);
+    let selectedDate = null;
+
+    function renderCalendar() {
+        const title = document.getElementById('calendarTitle');
+        const grid = document.getElementById('calendarGrid');
+        grid.innerHTML = '';
+
+        title.textContent = months[current.getMonth()] + ' ' + current.getFullYear();
+
+        days.forEach(d => {
+            const el = document.createElement('div');
+            el.className = 'calendar-day-name';
+            el.textContent = d;
+            grid.appendChild(el);
+        });
+
+        const firstDay = new Date(current.getFullYear(), current.getMonth(), 1).getDay();
+        const daysInMonth = new Date(current.getFullYear(), current.getMonth() + 1, 0).getDate();
+
+        for (let i = 0; i < firstDay; i++) {
+            const el = document.createElement('div');
+            el.className = 'calendar-day empty';
+            grid.appendChild(el);
+        }
+
+        for (let d = 1; d <= daysInMonth; d++) {
+            const el = document.createElement('div');
+            el.className = 'calendar-day';
+            el.textContent = d;
+
+            const thisDate = new Date(current.getFullYear(), current.getMonth(), d);
+
+            if (thisDate < new Date(today.getFullYear(), today.getMonth(), today.getDate())) {
+                el.classList.add('past');
+            }
+
+            if (selectedDate && thisDate.toDateString() === selectedDate.toDateString()) {
+                el.classList.add('selected');
+            }
+
+            el.addEventListener('click', () => {
+                selectedDate = thisDate;
+                document.getElementById('appointment').value = thisDate.toISOString().split('T')[0];
+                document.getElementById('selectedDateDisplay').textContent =
+                    'Selected: ' + days[thisDate.getDay()] + ', ' + 
+                    thisDate.getDate() + ' ' + months[thisDate.getMonth()] + 
+                    ' ' + thisDate.getFullYear();
+                renderCalendar();
+            });
+
+            grid.appendChild(el);
+        }
+    }
+
+    document.getElementById('prevMonth').addEventListener('click', () => {
+        const prev = new Date(current.getFullYear(), current.getMonth() - 1, 1);
+        if (prev >= new Date(today.getFullYear(), today.getMonth(), 1)) {
+            current = prev;
+            renderCalendar();
+        }
+    });
+
+    document.getElementById('nextMonth').addEventListener('click', () => {
+        current = new Date(current.getFullYear(), current.getMonth() + 1, 1);
+        renderCalendar();
+    });
+
+    renderCalendar();
+</script>
+</body>
+</html>
